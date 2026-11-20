@@ -1,0 +1,3 @@
+[submodule "SynnoDB"]
+	path = SynnoDB
+	url = https://github.com/awitten1/SynnoDB.git

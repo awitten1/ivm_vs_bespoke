@@ -1,0 +1,45 @@
+# uv environment. uv.lock and .python-version stay tracked.
+.venv/
+venv/
+
+# Secrets. .env.example stays tracked.
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+dist/
+build/
+.ipynb_checkpoints/
+
+# SynnoDB data, caches, and generated engines
+.synno_data/
+output/
+output_old/
+wandb/
+artifacts/
+cache/
+dbs/
+data/
+tmp/
+.plans/
+synthesized_engines/
+*.duckdb
+*.duckdb.wal
+*.parquet
+
+# macOS and editor scratch
+.DS_Store
+.idea/
+*.swp
+*~
