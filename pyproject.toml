@@ -5,7 +5,7 @@ description = "Compare PostgreSQL pg_ivm with SynnoDB (BespokeOLAP)"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "synnodb[notebook]",
+    "synnodb[notebook,factory]",
     # SynnoDB's lock and drop-in import target DuckDB 1.x. 2.0 exposes names
     # that dir() lists but getattr() cannot read.
     "duckdb==1.5.3",
@@ -13,9 +13,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# Engine generation. SynnoDB's factory extra includes landlock, which is Linux-only;
-# the runtime above is what `uv sync` installs by default.
-factory = ["synnodb[factory]"]
 dev = ["pytest>=9"]
 
 [tool.uv]

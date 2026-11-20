@@ -1410,15 +1410,12 @@ source = { virtual = "." }
 dependencies = [
     { name = "duckdb" },
     { name = "jupyter" },
-    { name = "synnodb", extra = ["notebook"] },
+    { name = "synnodb", extra = ["factory", "notebook"] },
 ]
 
 [package.optional-dependencies]
 dev = [
     { name = "pytest" },
-]
-factory = [
-    { name = "synnodb", extra = ["factory"] },
 ]
 
 [package.metadata]
@@ -1426,10 +1423,9 @@ requires-dist = [
     { name = "duckdb", specifier = "==1.5.3" },
     { name = "jupyter" },
     { name = "pytest", marker = "extra == 'dev'", specifier = ">=9" },
-    { name = "synnodb", extras = ["factory"], marker = "extra == 'factory'", editable = "SynnoDB" },
-    { name = "synnodb", extras = ["notebook"], editable = "SynnoDB" },
+    { name = "synnodb", extras = ["notebook", "factory"], editable = "SynnoDB" },
 ]
-provides-extras = ["factory", "dev"]
+provides-extras = ["dev"]
 
 [[package]]
 name = "jedi"
